@@ -1,7 +1,7 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
-name: diabetes_classification_4
-display_name: diabetes_classification_display_name_4
-experiment_name: diabetes_baseline_exp_4
+name: diabetes_classification_5
+display_name: diabetes_classification_display_name_5
+experiment_name: diabetes_baseline_exp_5
 code: model
 type: command
 command: >-
