@@ -1,15 +1,19 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+name: diabetes_classification_4
+display_name: diabetes_classification_display_name_4
+experiment_name: diabetes_baseline_exp_4
 code: model
+type: command
 command: >-
-  python 
-  --
-  --
+  python train.py
+  --training_data ${{inputs.training_data}}
+  --reg_rate ${{inputs.reg_rate}}
 inputs:
   training_data: 
-    type: uri_folder 
-    path: 
+    type: uri_folder
+    path: azureml://subscriptions/1536af98-c2ed-4a44-b30b-6f8119a30f58/resourcegroups/mloperations/workspaces/mlops/datastores/workspaceblobstore/paths/LocalUpload/de8020a91c295605114900a420686f6e/
   reg_rate: 0.01
-environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
-compute: 
-experiment_name: 
-description: 
+environment: azureml:AzureML-lightgbm-3.2-ubuntu18.04-py37-cpu:48
+compute: azureml:compute-1-mlops
+description: baseline run for diabetes classification.
+tags: {"model_type":"logistic_regression", "algo_type": "binary classification"}

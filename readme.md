@@ -1,0 +1,2 @@
+1. datasset create : `az ml data create --file assets/data_assets.yml --resource-group ml-ops --workspace-name ml-ops`
+2. create command job:  `az ml job create --file src/job.yml --resource-group mloperations --workspace-name mlops`
